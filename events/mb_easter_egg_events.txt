@@ -1,0 +1,121 @@
+######################################
+#
+# Crisis Triggering Events
+##
+#######################################
+
+namespace = mb_easter_egg
+
+
+country_event = {
+	id = mb_easter_egg.0
+	hide_window = yes
+	#fire_only_once = yes
+	trigger = {
+		is_country_type = fallen_empire
+	}
+	is_triggered_only = yes
+	immediate = {
+		random_list = {
+			1 = {
+				modifier = {
+					factor = 0.1
+					has_global_flag = mb_easter_egg_country_0_create_alredy
+				}
+				set_global_flag = mb_easter_egg_country_0_create_alredy
+				set_name = "動物農場"
+				ruler = {
+					set_name = "Ilea Blanche"
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0.1
+					has_global_flag = mb_easter_egg_country_1_create_alredy
+				}
+				set_global_flag = mb_easter_egg_country_1_create_alredy
+				set_name = "ずんだホライずん"
+				ruler = {
+					set_name = "kanaka3"
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 20
+					is_machine_empire = yes
+				}
+				modifier = {
+					factor = 0.2
+					is_machine_empire = no
+				}
+				modifier = {
+					factor = 0.1
+					has_global_flag = mb_easter_egg_country_2_create_alredy
+				}
+				set_global_flag = mb_easter_egg_country_2_create_alredy
+				set_name = "ゴホウシ・ロボット"
+				ruler = {
+					set_name = "Ika"
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0.1
+					has_global_flag = mb_easter_egg_country_3_create_alredy
+				}
+				set_global_flag = mb_easter_egg_country_3_create_alredy
+				set_name = "ぷるぷる主義！！！"
+				ruler = {
+					set_name = "clarettaskirt"
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0.1
+					has_global_flag = mb_easter_egg_country_4_create_alredy
+				}
+				set_global_flag = mb_easter_egg_country_4_create_alredy
+				set_name = "ことのはいぶっ！"
+				ruler = {
+					set_name = "世界樹のコズエ"
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0.1
+					has_global_flag = mb_easter_egg_country_5_create_alredy
+				}
+				set_global_flag = mb_easter_egg_country_5_create_alredy
+				set_name = "トッピー"
+				ruler = {
+					set_name = "toppe25x"
+				}
+				add_modifier = {
+					modifier = mb_easter_egg_2
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0.1
+					has_global_flag = mb_easter_egg_country_6_create_alredy
+				}
+				set_global_flag = mb_easter_egg_country_6_create_alredy
+				set_name = "暗黒メガコーポ オヤサイ・ファンド"
+				ruler = {
+					set_name = "野菜"
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0.1
+					has_global_flag = mb_easter_egg_country_7_create_alredy
+				}
+				set_global_flag = mb_easter_egg_country_7_create_alredy
+				set_name = "鋼帝国"
+				ruler = {
+					set_name = "シュタイン"
+				}
+			}
+		}
+	}
+}

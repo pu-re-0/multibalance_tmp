@@ -1,0 +1,47 @@
+##########################################################################
+# Decisions
+##########################################################################
+mb_decision_grow_tree_of_life = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_resources
+	enactment_time = 1440
+
+	resources = {
+		category = decisions
+		cost = {
+			food = 7500
+			unity = 2000
+			influence = 100
+		}
+	}
+
+	potential = {
+		owner = { has_origin = origin_tree_of_life }
+		has_deposit = d_tree_of_life_colony
+		always = no
+	}
+
+	allow = {
+		owner = { has_technology = tech_colonization_4 }
+		
+	}
+
+	effect = {
+		remove_deposit = d_tree_of_life_colony
+		add_deposit = d_tree_of_life_home
+	}
+
+	ai_weight = {
+		weight = 30
+		modifier = {
+			factor = 0
+			owner = {
+				has_monthly_income = {
+					resource = food
+					value < 5
+				}
+			}
+		}
+	}
+}

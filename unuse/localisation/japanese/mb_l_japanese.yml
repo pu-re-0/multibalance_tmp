@@ -1,0 +1,21 @@
+﻿l_japanese:
+ mb_start.1.name:0 "まるちばらんす：危機設定"
+ mb_start.1.desc:0 "危機がどのタイミングでくるか指定できます\n1.エンドゲーム30年後でランダムな時期\n2.エンドゲーム直後に確定\n3.§Rいますぐ！§!\n表示されている選択肢が現在の設定です（トルグ）"
+ mb_start.1.a:0 "エンドゲーム30年後でランダムな時期"
+ mb_start.1.b:0 "エンドゲーム直後に確定"
+ mb_start.1.c:0 "§Rいますぐ！§!"
+ mb_start.1.z:0 "完了"
+ 
+ requires_10_trust_or_good:0 ""
+
+ resource_subsidies_basic: "エネルギー"
+ resource_subsidies_basic_minerals: "鉱物"
+ resource_subsidies_basic_food: "食料"
+
+ resource_subsidies_advanced: "合金"
+ resource_subsidies_advanced_consumer_goods: "消費財"
+
+ resource_subsidies_research: "研究(まるちばらんすで無効化済み)"
+ resource_subsidies_strategic: "戦略"
+
+ mod_planet_researchers_society_research_produces_add: "$mod_planet_researchers_society_research_produces_mult$"

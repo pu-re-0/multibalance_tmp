@@ -1,0 +1,6 @@
+on_game_start_country = {
+	events = {
+		#mb_start.0
+		mb_easter_egg.0
+	}
+}

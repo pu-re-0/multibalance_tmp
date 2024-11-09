@@ -1,0 +1,21 @@
+mb_debug_command_limit_add = {
+	command_limit_add = 1000
+}
+
+mb_easter_egg_0 = {
+	planet_amenities_add = 99999
+}
+
+mb_easter_egg_1 = {
+	science_ship_survey_speed = 999
+}
+
+mb_easter_egg_2 = {
+	damage_vs_country_type_swarm_mult = 25
+	damage_vs_country_type_extradimensional_mult = 25
+	damage_vs_country_type_extradimensional_2_mult = 25
+	damage_vs_country_type_extradimensional_3_mult = 25
+	damage_vs_country_type_ai_empire_mult = 25
+	damage_vs_country_type_gray_goo_mult = 25
+	damage_vs_player_crisis_mult = 25
+}
