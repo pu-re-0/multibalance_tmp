@@ -95,7 +95,7 @@ district_srw_commercial = {
 			}
 		}
 		modifier = {
-			job_trader_add = 0.5 #1
+			job_trader_add = 1
 		}
 	}
 

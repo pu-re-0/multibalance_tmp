@@ -1,7 +1,6 @@
-@activation_cost = 3000
-@triumph_duration = 3600
-@triumph_duration_short = 1800
-@triumph_duration_veryshort = 900
+########################
+# Relics - Main File
+########################
 
 r_dragon_trophy = {
 	activation_duration = @triumph_duration
@@ -185,7 +184,7 @@ r_rubricator = {
 		weight = 150
 		modifier = {
 			factor = 0.5
-			has_resource = { type = minor_artifacts amount > 300}
+			has_resource = { type = minor_artifacts amount > 300 }
 		}
 	}
 
@@ -2556,6 +2555,8 @@ r_weather_manipulator = {
 		}
 		country_physics_research_produces_mult = 0.15
 	}
+	
+	score = 500
 
 	active_effect = {
 		custom_tooltip = storm_relic_repelling_field_modifier_tt
@@ -2630,6 +2631,8 @@ r_the_tempest_invocator = {
 		country_unity_produces_mult = 0.1
 		ships_upkeep_mult = -0.15
 	}
+
+	score = 500
 
 	active_effect = {
 		custom_tooltip = r_the_tempest_invocator_active_effect_tt

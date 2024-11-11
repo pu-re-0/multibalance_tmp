@@ -103,6 +103,9 @@ pc_gaia = {
 		pop_happiness = 0.10
 		planet_resettlement_unemployed_destination_mult = 0.5
 		planet_max_districts_add = 10
+		district_generator_max = 5 
+		district_mining_max = 5
+		district_farming_max = 5
 	}
 
 	min_distance_from_sun = 60

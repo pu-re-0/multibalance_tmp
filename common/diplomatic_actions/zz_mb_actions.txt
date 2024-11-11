@@ -397,6 +397,15 @@ action_declare_war = {
 				}
 			}
 		}
+		#戦争35年
+		custom_tooltip = {
+			fail_text = "requires_no_mb_or_35_year"
+			OR = {
+				is_ai = yes
+				from = { is_ai = yes }
+				years_passed >= 35
+			}
+		}
 	}
 }
 
@@ -2988,6 +2997,14 @@ action_demand_subjugation = {
 			}
 			desc = LACK_OF_TRUST
 		}
+		modifier = {
+			add = -50
+			root = {
+				is_militarist = yes
+				has_faction = imperialist
+			}
+			desc = TOO_IMPERIAL
+		}
 	}
 }
 
@@ -3156,6 +3173,14 @@ action_ask_to_become_subjugated = {
 				category = all
 				value >= equivalent
 			}
+		}
+		modifier = {
+			add = -100
+			root = {
+				is_militarist = yes
+				has_faction = imperialist
+			}
+			desc = TOO_IMPERIAL
 		}
 	}
 

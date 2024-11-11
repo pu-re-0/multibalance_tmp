@@ -9,7 +9,6 @@ building_food_processing_facility = {
 		NOR = {
 			is_planet_class = pc_machine
 			has_modifier = resort_colony
-
 		}
 
 		OR = {
@@ -29,7 +28,6 @@ building_food_processing_facility = {
 			}
 			is_planet_class = pc_machine
 			has_modifier = resort_colony
-
 			AND = {
 				owner = {
 					is_ai = yes
@@ -113,7 +111,6 @@ building_food_processing_center = {
 			}
 			is_planet_class = pc_machine
 			has_modifier = resort_colony
-
 		}
 	}
 
@@ -149,25 +146,6 @@ building_food_processing_center = {
 			district_farming_max = 4
 		}
 	}
-
-#	triggered_planet_modifier = {
-#		potential = {
-#			exists = owner
-#			owner = {
-#				is_robot_empire = no
-#			}
-#			NOR = {
-#				is_planet_class = pc_habitat
-#				is_planet_class = pc_machine
-#				is_planet_class = pc_hive
-#				is_planet_class = pc_city
-#				is_planet_class = pc_shattered_ring_habitable
-#			}
-#		}
-#		modifier = {
-#			district_farming_max = 2
-#		}
-#	}
 
 	inline_script = {
 		script = jobs/farmers_add
@@ -231,7 +209,6 @@ building_mineral_purification_plant = {
 	destroy_trigger = {
 		OR = {
 			has_modifier = resort_colony
-
 			AND = {
 				exists = owner
 				owner = {
@@ -245,7 +222,6 @@ building_mineral_purification_plant = {
 	potential = {
 		NOR = {
 			has_modifier = resort_colony
-
 		}
 
 		NOR = { # Ringworlds don't have mines
@@ -343,14 +319,12 @@ building_mineral_purification_hub = {
 		has_upgraded_capital = yes
 		NOR = {
 			has_modifier = resort_colony
-
 		}
 	}
 
 	destroy_trigger = {
 		OR = {
 			has_modifier = resort_colony
-
 			AND = {
 				exists = owner
 				owner = {
@@ -399,8 +373,7 @@ building_mineral_purification_hub = {
 		potential = {
 			exists = owner
 			owner = {
-				always = yes
-				#is_robot_empire = yes
+				always = yes	#is_robot_empire = yes
 			}
 			NOR = {
 				is_planet_class = pc_habitat
@@ -414,25 +387,6 @@ building_mineral_purification_hub = {
 			district_mining_max = 4
 		}
 	}
-
-#	triggered_planet_modifier = {
-#		potential = {
-#			exists = owner
-#			owner = {
-#				is_robot_empire = no
-#			}
-#			NOR = {
-#				is_planet_class = pc_habitat
-#				is_planet_class = pc_machine
-#				is_planet_class = pc_hive
-#				is_planet_class = pc_city
-#				is_planet_class = pc_shattered_ring_habitable
-#			}
-#		}
-#		modifier = {
-#			district_mining_max = 2
-#		}
-#	}
 
 	resources = {
 		category = planet_buildings
@@ -489,7 +443,6 @@ building_energy_grid = {
 		OR = {
 			OR = {
 				has_modifier = resort_colony
-	
 			}
 			AND = {
 				exists = owner
@@ -504,7 +457,6 @@ building_energy_grid = {
 	potential = {
 		NOR = {
 			has_modifier = resort_colony
-
 		}
 		OR = {
 			NOT = { is_planet_class = pc_habitat }
@@ -536,6 +488,9 @@ building_energy_grid = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
+			owner = {
+				always = yes	#is_robot_empire = yes
+			}
 			NOR = {
 				is_planet_class = pc_habitat
 				is_planet_class = pc_machine
@@ -588,7 +543,6 @@ building_energy_nexus = {
 	destroy_trigger = {
 		OR = {
 			has_modifier = resort_colony
-
 			AND = {
 				exists = owner
 				owner = {
@@ -621,8 +575,7 @@ building_energy_nexus = {
 		potential = {
 			exists = owner
 			owner = {
-				always = yes
-				#is_robot_empire = yes
+				always = yes	#is_robot_empire = yes
 			}
 			NOR = {
 				is_planet_class = pc_habitat
@@ -635,24 +588,6 @@ building_energy_nexus = {
 			district_generator_max = 4
 		}
 	}
-
-#	triggered_planet_modifier = {
-#		potential = {
-#			exists = owner
-#			owner = {
-#				is_robot_empire = no
-#			}
-#			NOR = {
-#				is_planet_class = pc_habitat
-#				is_planet_class = pc_machine
-#				is_planet_class = pc_hive
-#				is_planet_class = pc_city
-#			}
-#		}
-#		modifier = {
-#			district_generator_max = 2
-#		}
-#	}
 
 	resources = {
 		category = planet_buildings

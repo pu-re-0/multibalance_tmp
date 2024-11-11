@@ -214,7 +214,6 @@ ap_organo_machine_interfacing_assimilator = {
 	}
 }
 
-
 # Synthetic Ascension (regular empires)
 ap_synthetic_evolution = {
 	on_enabled = {

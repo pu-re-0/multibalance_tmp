@@ -99,6 +99,7 @@ resource_subsidies_basic = {
 
 resource_subsidies_basic_minerals = {
 	term = resource_subsidies
+	
 	resources = {
 		minerals
 	}
