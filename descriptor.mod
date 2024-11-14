@@ -5,4 +5,3 @@ tags={
 name="まるちばらんす:tmp"
 picture="thumbnail.png"
 supported_version="v3.14.*"
-remote_file_id="3119849910"
