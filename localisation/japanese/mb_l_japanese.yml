@@ -7,6 +7,7 @@
  mb_start.1.z:0 "完了"
  
  requires_10_trust_or_good:0 ""
+ requires_no_mb_or_35_year:0 "35年経過していない‼"
 
  resource_subsidies_basic: "エネルギー"
  resource_subsidies_basic_minerals: "鉱物"
