@@ -397,15 +397,16 @@ action_declare_war = {
 				}
 			}
 		}
-		#戦争35年
-		custom_tooltip = {
-			fail_text = "requires_no_mb_or_35_year"
-			OR = {
-				is_ai = yes
-				from = { is_ai = yes }
-				years_passed >= 35
-			}
-		}
+#		#戦争35年
+#		custom_tooltip = {
+#			fail_text = "requires_no_mb_or_35_year"
+#			OR = {
+#				is_ai = yes
+#				from = { is_ai = yes }
+#				has_global_flag = mb_not_requires_35_year
+#				years_passed >= 35
+#			}
+#		}
 	}
 }
 

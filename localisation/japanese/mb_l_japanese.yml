@@ -5,8 +5,13 @@
  mb_start.1.b:0 "エンドゲーム直後に確定"
  mb_start.1.c:0 "§Rいますぐ！§!"
  mb_start.1.z:0 "完了"
+
+ mb_start.10.name:0 "宣戦布告の設定(mb)"
+ mb_start.10.desc:0 "戦争なんて物騒な！！"
+ mb_start.10.a:0 "35年まで禁じよう"
+ mb_start.10.b:0 "最初から宣戦可能であるべきだ"
  
- requires_10_trust_or_good:0 ""
+ requires_10_trust_or_good:0 "あなたには信用が足りない！"
  requires_no_mb_or_35_year:0 "35年経過していない‼"
 
  resource_subsidies_basic: "エネルギー"

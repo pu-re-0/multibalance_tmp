@@ -26,7 +26,7 @@ NGameplay = {
 	SCORE_POPS = 2 # Per pop
 	SCORE_PLANETS = 50 # Per colony
 	SCORE_SYSTEMS = 10 # Per system
-	SCORE_SUBJECTS = 0.5 # Fraction of subject's own score
+	SCORE_SUBJECTS = 0.1 # Fraction of subject's own score
 	SCORE_FEDERATION_MEMBERS = 0.01 # Fraction of Federation member's own score
 	SCORE_CRISIS_KILLS = 10 # Per crisis ship killed
 

@@ -233,3 +233,27 @@ country_event = {
 		}
 	}
 }
+
+#３５年宣戦
+country_event = {
+	id = mb_start.10
+	title = mb_start.10.name
+	desc = mb_start.10.desc
+	picture = GFX_evt_announcement
+	fire_only_once = yes
+	is_triggered_only = yes #The game will not consider this event for starting on its own. Event will need to be triggered by another event, or by some other effect. Most events will use this.
+	trigger = {
+		is_ai = no
+	}
+	immediate = {
+		
+	}
+	option = {
+		name = mb_start.10.a
+		
+	}
+	option = {
+		name = mb_start.10.b
+		set_global_flag = mb_not_requires_35_year
+	}
+}
