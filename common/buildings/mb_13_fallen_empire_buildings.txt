@@ -1,0 +1,422 @@
+
+building_fe_clinic_1 = {
+	base_buildtime = @b2_time
+	can_build = yes
+	can_demolish = yes
+
+	category = amenity
+
+	building_sets = {
+		fallen_empire
+		urban
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				is_regular_empire = yes
+				is_hive_empire = yes
+			}
+			OR = {
+				is_fallen_empire = yes
+				has_technology = tech_fe_clinic_1
+				has_country_flag = fe_clinic_1_can_build
+			}
+		}
+		NOT = {
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+		}
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = ancrel.10004.failtext
+			exists = owner
+			owner = {
+				OR = {
+					check_variable = { which = fe_clinic_1_build_count value >= 1 }
+					is_fallen_empire = yes
+					has_technology = tech_fe_clinic_1
+				}
+			}
+		}
+		#mb
+		custom_tooltip = {
+			fail_text = mb.only_one_on_a_planet.failtext
+			NOR = {
+				num_buildings = {
+					type = building_fe_clinic_1
+					value > 0
+				}
+				num_buildings = {
+					type = building_fe_clinic_2
+					value > 0
+				}
+			}
+		}
+
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			is_machine_empire = yes
+			is_fallen_empire = no
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+			exotic_gases = @fe_sr_cost
+		}
+		upkeep = {
+			exotic_gases = 2
+			alloys = @b2_alloy_upkeep
+			energy = 15
+		}
+		cost = {
+			trigger = {
+				owner = { is_wilderness_empire = yes }
+			}
+			biomass = @b3_biomass
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_wilderness_empire = yes
+				has_tradition = tr_purity_finish
+			}
+		}
+		planet_building_build_speed_mult = 0.03
+		planet_decision_enact_speed_mult = 0.03
+	}
+
+	country_modifier = {
+		leader_lifespan_add = 1
+	}
+
+	inline_script = {
+		script = jobs/spawning_drone_add
+		AMOUNT = 150
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+			}
+		}
+		modifier = {
+			job_healthcare_add = 150
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_gene_tailoring
+			}
+			any_owned_pop_group = {
+				has_auto_modding_trait = yes
+			}
+		}
+		modifier = {
+			auto_mod_monthly_add = 400
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				game_start_auto_mod_empire = yes
+			}
+			any_owned_pop_group = {
+				has_auto_modding_trait = yes
+			}
+		}
+		modifier = {
+			auto_mod_monthly_add = 400
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = clone_army_full_potential
+				has_active_tradition = tr_cloning_artificial_population_clone_army
+			}
+		}
+		clone_soldiers_sustained = @clones_sustained_low
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					has_purity_heightened_attributes_tradition = yes
+					has_cloning_artificial_population_tradition = yes
+					has_mutation_somatic_subversiveness_tradition = yes
+				}
+			}
+		}
+		organic_pop_bonus_workforce_mult = @medical_workforce_mult
+	}
+
+	on_queued = {
+		if = { # kill on the same planet
+			limit = {
+				is_variable_set = local_spent_biomass
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
+			}
+			random_owned_pop_group = {
+				limit = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
+				kill_pop_group = {
+					pop_group = this
+					amount = local_spent_biomass
+				}
+			}
+		}
+		else_if = {
+			limit = { is_variable_set = local_spent_biomass }
+			owner = {
+				global_biomass_spender = yes
+			}
+		}
+		owner = {
+			subtract_variable = { which = fe_clinic_1_build_count value = 1 }
+		}
+	}
+
+	on_unqueued = {
+		unqueue_biomass_effect = yes
+		owner = {
+			change_variable = { which = fe_clinic_1_build_count value = 1 }
+		}
+	}
+
+	upgrades = {
+		building_fe_clinic_2
+	}
+
+	show_in_tech = tech_fe_clinic_1
+}
+
+building_fe_clinic_2 = {
+	base_buildtime = @b2_time
+	can_build = no
+	planet_limit = 1
+
+	category = amenity
+
+	building_sets = {
+		fallen_empire
+		urban
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				is_regular_empire = yes
+				is_hive_empire = yes
+			}
+			OR = {
+				is_fallen_empire = yes
+				has_technology = tech_fe_clinic_2
+				has_country_flag = fe_clinic_1_can_build
+			}
+		}
+		NOT = {
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+		}
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = ancrel.10004.failtext
+			exists = owner
+			owner = {
+				OR = {
+					check_variable = { which = fe_clinic_1_upgrade_count value >= 1 }
+					is_fallen_empire = yes
+					has_technology = tech_fe_clinic_2
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			is_machine_empire = yes
+			is_fallen_empire = no
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+		}
+		upkeep = {
+			exotic_gases = 2
+			alloys = @b2_alloy_upkeep
+			energy = 15
+		}
+		cost = {
+			trigger = {
+				owner = { is_wilderness_empire = yes }
+			}
+			biomass = @b3_biomass
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_wilderness_empire = yes
+				has_tradition = tr_purity_finish
+			}
+		}
+		planet_building_build_speed_mult = 0.03
+		planet_decision_enact_speed_mult = 0.03
+	}
+
+	country_modifier = {
+		leader_lifespan_add = 2
+	}
+
+	inline_script = {
+		script = jobs/spawning_drone_add
+		AMOUNT = 300
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+			}
+		}
+		modifier = {
+			job_healthcare_add = 300
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_gene_tailoring
+			}
+			any_owned_pop_group = {
+				has_auto_modding_trait = yes
+			}
+		}
+		modifier = {
+			auto_mod_monthly_add = 600
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				game_start_auto_mod_empire = yes
+			}
+			any_owned_pop_group = {
+				has_auto_modding_trait = yes
+			}
+		}
+		modifier = {
+			auto_mod_monthly_add = 600
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = clone_army_full_potential
+				has_active_tradition = tr_cloning_artificial_population_clone_army
+			}
+		}
+		clone_soldiers_sustained = @clones_sustained_low
+		mult = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					has_purity_heightened_attributes_tradition = yes
+					has_cloning_artificial_population_tradition = yes
+					has_mutation_somatic_subversiveness_tradition = yes
+				}
+			}
+		}
+		organic_pop_bonus_workforce_mult = @medical_workforce_mult
+		mult = 2
+	}
+
+	on_queued = {
+		if = { # kill on the same planet
+			limit = {
+				is_variable_set = local_spent_biomass
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
+			}
+			random_owned_pop_group = {
+				limit = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
+				kill_pop_group = {
+					pop_group = this
+					amount = local_spent_biomass
+				}
+			}
+		}
+		else_if = {
+			limit = { is_variable_set = local_spent_biomass }
+			owner = {
+				global_biomass_spender = yes
+			}
+		}
+		owner = {
+			subtract_variable = { which = fe_clinic_1_upgrade_count value = 1 }
+		}
+	}
+
+	on_unqueued = {
+		unqueue_biomass_effect = yes
+		owner = {
+			change_variable = { which = fe_clinic_1_upgrade_count value = 1 }
+		}
+	}
+
+	show_in_tech = tech_fe_clinic_2
+}

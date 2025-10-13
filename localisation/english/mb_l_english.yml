@@ -5,3 +5,34 @@
  mb_start.1.b:0 "エンドゲーム直後に確定"
  mb_start.1.c:0 "§Rいますぐ！§!"
  mb_start.1.z:0 "完了"
+
+ mb_start.10.name:0 "宣戦布告の設定(mb)"
+ mb_start.10.desc:0 "戦争なんて物騒な！！"
+ mb_start.10.a:0 "35年まで禁じよう"
+ mb_start.10.b:0 "最初から宣戦可能であるべきだ"
+ 
+ requires_10_trust_or_good:0 "あなたには信用が足りない！"
+ requires_no_mb_or_35_year:0 "35年経過していない‼"
+
+ resource_subsidies_basic: "energy"
+ resource_subsidies_basic_minerals: "mineral"
+ resource_subsidies_basic_food: "food"
+
+ resource_subsidies_advanced: "alloy"
+ resource_subsidies_advanced_consumer_goods: "costomer_goods"
+
+ resource_subsidies_research: "resuerch(まるちばらんすで無効化済み)"
+ resource_subsidies_strategic: "stragitic resource"
+
+ mod_planet_researchers_society_research_produces_add: "$mod_planet_researchers_society_research_produces_mult$"
+
+ policy_mb_cosmogenesis_policy:0 "無限理論の研究"
+ policy_mb_cosmogenesis_policy_desc:0 ""
+ mb_cosmogenesis_policy_outlawed_name:0 "非合法"
+ mb_cosmogenesis_policy_outlawed:0 "無限理論は出現しない"
+ mb_cosmogenesis_policy_outlawed_desc:0 ""
+ mb_cosmogenesis_policy_allowed_name:0 "許可"
+ mb_cosmogenesis_policy_allowed:0 "無限理論は出現する"
+ mb_cosmogenesis_policy_allowed_desc:0 ""
+
+ mb.only_one_on_a_planet.failtext "惑星上限1"

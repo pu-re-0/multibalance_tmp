@@ -1,0 +1,175 @@
+
+building_foundry_upkeep_1 = {
+	base_buildtime = @b2_time
+	planet_limit = 1
+	category = manufacturing
+
+	building_sets = {
+		foundry
+		industrial
+	}
+
+	potential = {
+		exists = owner
+		owner = { is_wilderness_empire = no } # see 'building_natural_furnace_2'
+		NOT = {
+			has_modifier = resort_colony
+		}
+	}
+	destroy_trigger = {
+		OR = {
+			NOT = { exists = owner }
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			owner = { is_wilderness_empire = yes }
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+			volatile_motes = @b3_rare_cost
+		}
+		upkeep = {
+			energy = @b2_upkeep
+			volatile_motes = @b3_rare_upkeep
+		}
+	}
+
+	prerequisites = {
+		tech_alloys_1
+	}
+
+	planet_modifier = {
+		planet_metallurgists_upkeep_mult = -0.20
+	}
+
+	triggered_planet_modifier = {
+		potential = { 
+			exists = owner
+			owner = {
+				country_uses_bio_ships = no
+			}
+		}
+		planet_metallurgists_upkeep_mult = -0.10
+	}
+
+	ai_resource_production = {
+		minerals = 10
+		trigger = {
+			exists = owner
+			owner = {
+				is_catalytic_empire = no
+			}
+			has_any_foundry_zone = yes
+		}
+	}
+
+	ai_resource_production = {
+		food = 10
+		trigger = {
+			exists = owner
+			owner = {
+				is_catalytic_empire = yes
+			}
+			has_any_foundry_zone = yes
+		}
+	}
+
+	show_tech_unlock_if = {
+		is_wilderness_empire = no
+	}
+
+}
+
+building_foundry_efficiency_1 = {
+	base_buildtime = @b3_time
+	planet_limit = 1
+	category = manufacturing
+
+	building_sets = {
+		foundry
+		industrial
+	}
+
+	potential = {
+		exists = owner
+		owner = { is_wilderness_empire = no } # see 'building_natural_furnace_3'
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			owner = { is_wilderness_empire = yes }
+		}
+	}
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			owner = { is_wilderness_empire = yes }
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			trigger = {
+				has_ringworld_output_boost = no
+			}
+			minerals = @b3_minerals
+			volatile_motes = @b4_rare_cost
+		}
+		cost = {
+			trigger = {
+				has_ringworld_output_boost = yes
+			}
+			minerals = 1500
+			volatile_motes = 600
+		}
+		upkeep = {
+			trigger = {
+				has_ringworld_output_boost = no
+			}
+			energy = @b3_upkeep
+			volatile_motes = @b4_rare_upkeep
+		}
+		upkeep = {
+			trigger = {
+				has_ringworld_output_boost = yes
+			}
+			energy = 15
+			volatile_motes = 8
+		}
+	}
+
+	prerequisites = {
+		tech_alloys_2
+	}
+
+	planet_modifier = {
+		foundry_jobs_bonus_workforce_mult = 0.15
+	}
+
+	triggered_planet_modifier = {
+		potential = { 
+			exists = owner
+			owner = {
+				country_uses_bio_ships = no
+			}
+		}
+		planet_metallurgists_alloys_produces_add = 1
+		planet_metallurgists_minerals_upkeep_add = 2
+	}
+
+	ai_resource_production = {
+		alloys = 10
+		trigger = {
+			has_any_foundry_zone = yes
+		}
+	}
+
+	show_tech_unlock_if = {
+		is_wilderness_empire = no
+	}
+}

@@ -1,44 +1,37 @@
 NGameplay = {
-	#Number of tick commands we sent per turn, this is very useful for ppl running the game in fullscreen, a much faster simulation speed should be reached
-	NUM_COMMANDS_PER_TURN = 2
+		# These values control the mid and end game sliders in game setup
+		MID_GAME_START_DEFAULT = 25
+		MID_GAME_START_MAX = 150
+		MID_GAME_START_MIN = 0
+		END_GAME_START_DEFAULT = 50
+		END_GAME_START_MAX = 175
+		END_GAME_START_MIN = 25
+		START_YEAR_SLIDER_INTERVAL = 25
+		VICTORY_YEAR_DEFAULT = 100
+		VICTORY_YEAR_MAX = 200
+		VICTORY_YEAR_MIN = 50
+		VICTORY_YEAR_SLIDER_INTERVAL = 25
 
-	GUARANTEED_COLONIES_DEFAULT = 2
-	GUARANTEED_COLONIES_MIN = 0
-	GUARANTEED_COLONIES_MAX = 2
+		SCORE_NO_ECONOMY = 5000 # For countries with no economy that still count for victory
+		SCORE_ECONOMIC_POWER = 1 # Per economic power
+		SCORE_TECH_POWER = 0.25 # Per tech power
+		SCORE_MILITARY_POWER = 0.00 # Per fleet power
+		SCORE_POPS = 0.02 # Per pop
+		SCORE_PLANETS = 50 # Per colony
+		SCORE_SYSTEMS = 10 # Per system
+		SCORE_SUBJECTS = 0.5 # Fraction of subject's own score
+		SCORE_FEDERATION_MEMBERS = 0.01 # Fraction of Federation member's own score
+		SCORE_CRISIS_KILLS = 10 # Per crisis ship killed
 
-	# These values control the mid and end game sliders in game setup
-	MID_GAME_START_DEFAULT = 25
-	MID_GAME_START_MAX = 50
-	MID_GAME_START_MIN = 0
-	END_GAME_START_DEFAULT = 50
-	END_GAME_START_MAX = 75
-	END_GAME_START_MIN = 25
-	START_YEAR_SLIDER_INTERVAL = 5
-	VICTORY_YEAR_DEFAULT = 100
-	VICTORY_YEAR_MAX = 200
-	VICTORY_YEAR_MIN = 50
-	VICTORY_YEAR_SLIDER_INTERVAL = 10
+		TECH_COST_DEFAULT = 0.5
+		TECH_COST_MIN = 0.25
+		TECH_COST_MAX = 1.00
+		TECH_COST_SLIDER_INTERVAL = 0.05
 
-	SCORE_NO_ECONOMY = 5000 # For countries with no economy that still count for victory
-	SCORE_ECONOMIC_POWER = 1 # Per economic power
-	SCORE_TECH_POWER = 0.25 # Per tech power
-	SCORE_MILITARY_POWER = 0.00 # Per fleet power
-	SCORE_POPS = 2 # Per pop
-	SCORE_PLANETS = 50 # Per colony
-	SCORE_SYSTEMS = 10 # Per system
-	SCORE_SUBJECTS = 0.1 # Fraction of subject's own score
-	SCORE_FEDERATION_MEMBERS = 0.01 # Fraction of Federation member's own score
-	SCORE_CRISIS_KILLS = 10 # Per crisis ship killed
+		TECH_COST_DIFFICULTY_SCALE_MULT = 0.025
 
-	TECH_COST_DEFAULT = 0.50
-	TECH_COST_MIN = 0.25
-	TECH_COST_MAX = 1.0
-	TECH_COST_SLIDER_INTERVAL = 0.05
-
-	TECH_COST_DIFFICULTY_SCALE_MULT = 0.025
-
-	TRADITION_COST_DEFAULT = 0.5
-	TRADITION_COST_MIN = 0.25
-	TRADITION_COST_MAX = 1.0
-	TRADITION_COST_SLIDER_INTERVAL = 0.05
+		TRADITION_COST_DEFAULT = 0.5
+		TRADITION_COST_MIN = 0.25
+		TRADITION_COST_MAX = 1.00
+		TRADITION_COST_SLIDER_INTERVAL = 0.05
 }

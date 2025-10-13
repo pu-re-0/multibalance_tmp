@@ -25,3 +25,14 @@
  resource_subsidies_strategic: "戦略"
 
  mod_planet_researchers_society_research_produces_add: "$mod_planet_researchers_society_research_produces_mult$"
+
+ policy_mb_cosmogenesis_policy:0 "無限理論の研究"
+ policy_mb_cosmogenesis_policy_desc:0 ""
+ mb_cosmogenesis_policy_outlawed_name:0 "非合法"
+ mb_cosmogenesis_policy_outlawed:0 "無限理論は出現しない"
+ mb_cosmogenesis_policy_outlawed_desc:0 ""
+ mb_cosmogenesis_policy_allowed_name:0 "許可"
+ mb_cosmogenesis_policy_allowed:0 "無限理論は出現する"
+ mb_cosmogenesis_policy_allowed_desc:0 ""
+
+ mb.only_one_on_a_planet.failtext "惑星上限1"

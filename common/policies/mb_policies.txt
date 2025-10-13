@@ -1,0 +1,30 @@
+mb_cosmogenesis_policy = {
+	potential = {
+		always = yes
+		#has_ascension_perk = ap_cosmogenesis
+	}
+
+	option = {
+		name = "mb_cosmogenesis_policy_outlawed"
+
+		policy_flags = {
+			mb_cosmogenesis_policy_outlawed
+		}
+
+		AI_weight = {
+			factor = 1
+		}
+	}
+
+	option = {
+		name = "mb_cosmogenesis_policy_allowed"
+
+		policy_flags = {
+			mb_cosmogenesis_policy_allowed
+		}
+
+		AI_weight = {
+			factor = 9999
+		}
+	}
+}
